@@ -1,0 +1,14 @@
+:root {
+  --top-placement: 100px;
+  --left-placement: 100px;
+}
+
+#cat img {
+    position: fixed;
+    top: var(--top-placement);
+    left: var(--left-placement);
+    max-width: 100px;
+    max-height:100px;
+    width = auto;
+    height = auto;
+}
