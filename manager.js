@@ -6,6 +6,28 @@
 var table = document.getElementById('catTable');
 var tableBody = table.getElementsByTagName('tbody');
 var url;
+var row, cell1, cell2, cell3;
+
+function addRow(count, currentCat, seen) {
+  var img = document.createElement("IMG");
+  img.height = 100;
+  img.width = 100;
+  img.src = currentCat;
+  console.log(count);
+  row = table.insertRow(count);
+  cell1 = row.insertCell(0);
+  cell2 = row.insertCell(1);
+  cell3 = row.insertCell(2);
+  cell1.appendChild(img);
+  cell2.innerHTML = seen.toString();
+  cell3.innerHTML = "0";
+}
+
+function callback(count, currentCat) {
+  chrome.storage.sync.get(currentCat, function (timesSeen) {
+    addRow(count, currentCat, timesSeen[currentCat]);
+  });
+}
 
 function displayCatCollection() {
   chrome.storage.sync.get('cats', function (profileObj) {
@@ -15,10 +37,10 @@ function displayCatCollection() {
         return;
       } else {
         var i = 1;
-        var row = table.insertRow(0);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
+        row = table.insertRow(0);
+        cell1 = row.insertCell(0);
+        cell2 = row.insertCell(1);
+        cell3 = row.insertCell(2);
 
         cell1.innerHTML = "Catto Type";
         cell2.innerHTML = "Number of Times Seen";
@@ -26,29 +48,8 @@ function displayCatCollection() {
 
         var catArray = profile['cats'];
         for (var cat in catArray) {
-          console.log(cat);
-
           url = catArray[cat];
-          row = table.insertRow(i);
-          cell1 = row.insertCell(0);
-          cell2 = row.insertCell(1);
-          vcell3 = row.insertCell(2);
-
-          var img = document.createElement("IMG");
-          img.height = 100;
-          img.width = 100;
-          img.src = url;
-
-          cell1.appendChild(img);
-
-          var seen = chrome.storage.sync.get(url, function(counter) {
-            return counter[url];
-          });
-
-          cell3.innerHTML = seen.toString();
-
-          var loveMeter = 0;
-          cell3.innerHTML = loveMeter.toString();
+          callback(i, url);
           i++;
         }
       }
