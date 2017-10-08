@@ -5,7 +5,9 @@
   "version" : "0.8",
   "description" : "Testing Cookie API",
   "web_accessible_resources": ["images/*"],
-
+  "chrome_url_overrides" : {
+    "newtab": "manager.html"
+  },
   "permissions": [ "cookies", "tabs", "http://*/*", "https://*/*", "activeTab",
   "storage"],
 
