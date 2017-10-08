@@ -10,6 +10,15 @@ var row, cell1, cell2, cell3;
 document.body.style.backgroundColor = "#e6e6e6";
 
 function addRow(count, currentCat, seen) {
+  var heart = document.createElement("IMG");
+  heart.height = 25;
+  heart.width = 25;
+  var seen2 = seen*2;
+  if (seen2 >= 46) {
+    heart.src = chrome.extension.getURL('images/heart46.gif');
+  } else {
+    heart.src = chrome.extension.getURL('images/heart' + seen2 + '.gif');
+  }
   var img = document.createElement("IMG");
   img.height = 25;
   img.width = 25;
@@ -21,7 +30,7 @@ function addRow(count, currentCat, seen) {
   cell3 = row.insertCell(2);
   cell1.appendChild(img);
   cell2.innerHTML = seen.toString();
-  cell3.innerHTML = "0";
+  cell3.appendChild(heart);
 }
 
 function callback(count, currentCat) {
