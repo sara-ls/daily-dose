@@ -10,8 +10,8 @@ var row, cell1, cell2, cell3;
 
 function addRow(count, currentCat, seen) {
   var img = document.createElement("IMG");
-  img.height = 100;
-  img.width = 100;
+  img.height = 35;
+  img.width = 35;
   img.src = currentCat;
   console.log(count);
   row = table.insertRow(count);
@@ -87,4 +87,7 @@ function displayCatCollection() {
    */
 }
 
+setTimeout(function(){
+    // DOM manipulation stuff
+}, 2500);
 displayCatCollection();
