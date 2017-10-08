@@ -10,8 +10,8 @@ var row, cell1, cell2, cell3;
 
 function addRow(count, currentCat, seen) {
   var img = document.createElement("IMG");
-  img.height = 35;
-  img.width = 35;
+  img.height = 25;
+  img.width = 25;
   img.src = currentCat;
   console.log(count);
   row = table.insertRow(count);
@@ -42,8 +42,8 @@ function displayCatCollection() {
         cell2 = row.insertCell(1);
         cell3 = row.insertCell(2);
 
-        cell1.innerHTML = "Catto Type";
-        cell2.innerHTML = "Number of Times Seen";
+        cell1.innerHTML = "Cat";
+        cell2.innerHTML = "Encounters";
         cell3.innerHTML = "Love Meter";
 
         var catArray = profile['cats'];
