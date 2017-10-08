@@ -6,9 +6,10 @@ var imgURL;
 
 function catAppearance() {
   var chance = Math.floor(Math.random());
+  var catNum = selectRandom(1, 28);
   if (chance < 0.9) {
       div.id = "cat";
-      imgURL = chrome.extension.getURL('images/rolling.gif');
+      imgURL = chrome.extension.getURL('images/cat' + catNum + '.gif');
       img.src = imgURL;
       div.style.setProperty('--top-placement', rand + 'px', 'important');
       div.style.setProperty('--left-placement', rand2 + 'px', 'important');
@@ -16,6 +17,11 @@ function catAppearance() {
       document.body.appendChild(div);
       div.addEventListener("click", catClick);
   }
+}
+
+// selects random int inclusive!
+function selectRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function catClick() {
@@ -50,8 +56,7 @@ function catClick() {
                     });
                 });
             } else {
-                profile.push(imgURL);
-                chrome.storage.sync.set({'cats': JSON.stringify(seenCats)});
+                profile['cats'].push(imgURL);
                 chrome.storage.sync.set({imgURL: 1}, function () {
                     console.log(imgURL + ":" + 1);
                 });
@@ -59,34 +64,6 @@ function catClick() {
         }
     });
 }
-  /**
-  if (!chrome.storage.sync.get("cats")) {
-    // Add string of imgURL
-    chrome.storage.sync.set({"cats" : JSON.stringify(imgURL)}, function(){
-        console.log("added to storage");
-    });
-    chrome.storage.sync.set({imgURL : 1}, function() {
-        console.log(imgURL + ":" + 1);
-    });
-  } else {
-      // Seen multiple cats, add more cats
-      var seenCats = JSON.parse(chrome.storage.sync.get("cats", function () {
-      }));
-      if (seenCats.contains(imgURL)) {
-          var timesSeen = chrome.storage.sync.get(imgURL);
-          timesSeen += 1;
-          chrome.storage.sync.set({imgURL: timesSeen}, function() {
-              console.log(imgURL + ":" + timesSeen);
-          });
-      } else {
-          seenCats.push(imgURL);
-          chrome.storage.sync.set({"cats": JSON.stringify(seenCats)});
-          chrome.storage.sync.set({imgURL : 1}, function() {
-              console.log(imgURL + ":" + 1);
-          });
-      }
-  }
-  */
 
 
 function clearImage() {
