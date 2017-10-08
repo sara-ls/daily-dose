@@ -1,39 +1,58 @@
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-var div = document.createElement("DIV");
-div.id = "catCollection";
-var width = 0;
-var height = 0;
-var img = document.createElement("IMG");
-img.maxHeight = 125;
-img.maxWidth = 125;
-var table = document.getElementById("catTable");
 
+
+var table = document.getElementById('catTable');
+var tableBody = table.getElementsByTagName('tbody');
+var url;
 
 function displayCatCollection() {
-    chrome.storage.sync.get('cats', function (profileObj) {
-        var profile = profileObj;
-        console.log(profile);
-        if (jQuery.isEmptyObject(profile)) {
-          return;
-        } else {
-          var catArray = profile['cats'];
-          for (var cat in catArray) {
-              var row = table.insertRow();
-              var cell1 = row.insertCell(0);
-              var cell2 = row.insertCell(1);
-              var cell3 = row.insertCell(2);
+  chrome.storage.sync.get('cats', function (profileObj) {
+      var profile = profileObj;
+      console.log(profile);
+      if (jQuery.isEmptyObject(profile)) {
+        return;
+      } else {
+        var i = 1;
+        var row = table.insertRow(0);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
 
-              img.src = cat;
-              cell1.appendChild(img);
-              cell2.appendChild(chrome.storage.sync.get(cat, function (profileObj) {
-                return profileObj[cat];
-              }));
-              cell3.appendData("0");
-          }
+        cell1.innerHTML = "Catto Type";
+        cell2.innerHTML = "Number of Times Seen";
+        cell3.innerHTML = "Love Meter";
+
+        var catArray = profile['cats'];
+        for (var cat in catArray) {
+          console.log(cat);
+
+          url = catArray[cat];
+          row = table.insertRow(i);
+          cell1 = row.insertCell(0);
+          cell2 = row.insertCell(1);
+          vcell3 = row.insertCell(2);
+
+          var img = document.createElement("IMG");
+          img.height = 100;
+          img.width = 100;
+          img.src = url;
+
+          cell1.appendChild(img);
+
+          var seen = chrome.storage.sync.get(url, function(counter) {
+            return counter[url];
+          });
+
+          cell3.innerHTML = seen.toString();
+
+          var loveMeter = 0;
+          cell3.innerHTML = loveMeter.toString();
+          i++;
         }
-    });
+      }
+  });
 
   /**
   StorageArea.get(null, function(items) {
