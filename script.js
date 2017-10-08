@@ -1,5 +1,13 @@
-var rand = Math.floor(Math.random() * screen.height + 500);
-var rand2 = Math.floor(Math.random() * screen.width + 500);
+var rand = Math.floor(Math.random() * screen.height);
+var rand2 = Math.floor(Math.random() * screen.width);
+
+if (rand > 200) {
+    rand = rand - 200;
+}
+
+if (rand2 > 200) {
+    rand2 = rand2-200;
+}
 
 var img = document.createElement("IMG");
 var div = document.createElement("DIV");
