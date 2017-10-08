@@ -23,19 +23,28 @@ function displayCatCollection() {
       console.log(imgURL);
       if (cats_displayed.indexOf(imgURL) == -1) {
         var img = document.createElement("IMG");
-        img.height = 100;
-        img.width = 100;
-        img.bottom = h;
-        img.left = w;
         img.src = imgURL;
-        img.position = "fixed";
+        while (img.height > 300) {
+          img.height = img.height / 2;
+          img.width = img.width / 2;
+        }
+        console.log(img.naturalHeight);
+        
+        console.log(img.bottom);
+        img.bottom = Math.floor(Math.random() * screen.height - 250);;
+        img.left = Math.floor(Math.random() * screen.width + 100);
+
+        img.position = "relative";
         div.appendChild(img);
+
+/*
         if (w + 100 > window.innerWidth) {
           w = 0;
           h += 100;
         } else {
           w += 100;
         }
+        */
       }
     }
     document.body.appendChild(div);
