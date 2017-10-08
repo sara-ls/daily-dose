@@ -89,5 +89,5 @@ function displayCatCollection() {
 */
 setTimeout(function(){
     // DOM manipulation stuff
-}, 2500);
+}, 0);
 displayCatCollection();

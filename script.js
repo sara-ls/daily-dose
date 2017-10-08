@@ -8,6 +8,10 @@ function catAppearance() {
   var chance = Math.floor(Math.random());
   var catNum = selectRandom(1, 28);
   if (chance < 0.9) {
+      var audio = new Audio();
+      audio.src = chrome.extension.getURL("sounds/meow.mp3");
+      audio.play();
+      console.log("cat appeared!");
       div.id = "cat";
       imgURL = chrome.extension.getURL('images/cat' + catNum + '.gif');
       img.src = imgURL;
@@ -27,6 +31,9 @@ function selectRandom(min, max) {
 function catClick() {
     img.src = chrome.extension.getURL('images/smoke.gif');
     window.setTimeout(clearImage, 900);
+    var audio = new Audio();
+    audio.src = chrome.extension.getURL("sounds/poof.mp3");
+    audio.play();
     // check if any cats are found, should only be done for first cat
     chrome.storage.sync.get('cats', function (profileObj) {
         var profile = profileObj;
