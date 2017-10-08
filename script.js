@@ -24,7 +24,7 @@ function catAppearance() {
   var chance = Math.random();
   console.log(chance);
   var catNum = selectRandom(1, 38);
-  if (chance < 0.28) {
+  if (chance < 0.11) {
 
       sound.play();
       div.id = "cat";
