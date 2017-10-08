@@ -1,5 +1,6 @@
 var rand = Math.floor(Math.random() * screen.height - 250);
-var rand2 = Math.floor(Math.random() * screen.width - 250);
+var rand2 = Math.floor(Math.random() * screen.width + 100);
+
 var img = document.createElement("IMG");
 var div = document.createElement("DIV");
 var imgURL;
@@ -7,7 +8,7 @@ var imgURL;
 function catAppearance() {
   var chance = Math.floor(Math.random());
   var catNum = selectRandom(1, 28);
-  if (chance < 0.9) {
+  if (chance < 0.28) {
       div.id = "cat";
       imgURL = chrome.extension.getURL('images/cat' + catNum + '.gif');
       img.src = imgURL;
