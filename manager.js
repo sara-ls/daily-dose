@@ -1,6 +1,14 @@
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
+var div = document.createElement("DIV");
+div.id = "catCollection";
+var width = 0;
+var height = 0;
+var img = document.createElement("IMG");
+img.maxHeight = 125;
+img.maxWidth = 125;
+var table = document.getElementById("catTable");
 
 
 function displayCatCollection() {
