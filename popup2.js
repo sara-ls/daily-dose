@@ -7,6 +7,7 @@ var table = document.getElementById('catTable');
 var tableBody = table.getElementsByTagName('tbody');
 var url;
 var row, cell1, cell2, cell3;
+document.body.style.backgroundColor = "#e6e6e6";
 
 function addRow(count, currentCat, seen) {
   var img = document.createElement("IMG");
