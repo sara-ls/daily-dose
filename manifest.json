@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name" : "Cookie API Test Extension",
-  "version" : "0.8",
-  "description" : "Testing Cookie API",
+  "name" : "Tabby Katz",
+  "version" : "1.0",
+  "description" : "catching cats and loving cats",
   "web_accessible_resources": ["images/*", "sounds/*"],
   "chrome_url_overrides": {
     "newtab": "manager.html"
