@@ -54,7 +54,7 @@ function displayCatCollection() {
         }
       }
   });
-
+}
   /**
   StorageArea.get(null, function(items) {
     var cats_displayed = [];
@@ -86,7 +86,7 @@ function displayCatCollection() {
     document.body.appendChild(div);
   });
 }
-
+*/
 setTimeout(function(){
     // DOM manipulation stuff
 }, 2500);
