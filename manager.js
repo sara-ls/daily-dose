@@ -4,15 +4,16 @@
 
 
 function displayCatCollection() {
-  StorageArea.get(null, function(items) {
+  chrome.storage.sync.get("cats", function(items) {
     var cats_displayed = [];
     var div = document.createElement("DIV");
     div.id = "catCollection";
     var width = 0;
     var height = 0;
-
-    for (var item in items) {
-      var imgURL = item.value;
+    console.log(items["cats"]);
+    for (var i = 0; i < items["cats"].length; i++) {
+      var imgURL = items["cats"][i];
+      console.log(imgURL);
       if (cats_displayed.indexOf(imgURL) == -1) {
         var img = document.createElement("IMG");
         img.height = 100;
