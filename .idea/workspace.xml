@@ -59,7 +59,7 @@
       <file leaf-file-name="popup2.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/popup2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
+            <state relative-caret-position="480">
               <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -97,8 +97,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>profile.push</find>
-      <find>local</find>
       <find>sync</find>
+      <find>local</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -112,9 +112,9 @@
         <option value="$PROJECT_DIR$/popup.js" />
         <option value="$PROJECT_DIR$/popup.htm" />
         <option value="$PROJECT_DIR$/manager.js" />
-        <option value="$PROJECT_DIR$/popup2.js" />
         <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/script.js" />
+        <option value="$PROJECT_DIR$/popup2.js" />
       </list>
     </option>
   </component>
@@ -194,12 +194,12 @@
       <updated>1507403634287</updated>
       <workItem from="1507403635513" duration="3565000" />
       <workItem from="1507408340153" duration="2426000" />
-      <workItem from="1507422751423" duration="16264000" />
+      <workItem from="1507422751423" duration="16305000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24324000" />
+    <option name="totallyTimeSpent" value="24365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -461,16 +461,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manager.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fix.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -505,9 +495,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/manager.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/popup2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
+        <state relative-caret-position="480">
           <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
