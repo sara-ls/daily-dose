@@ -5,7 +5,7 @@
   "version" : "0.8",
   "description" : "Testing Cookie API",
   "web_accessible_resources": ["images/*"],
-  "chrome_url_overrides" : {
+  "chrome_url_overrides": {
     "newtab": "manager.html"
   },
   "permissions": [ "cookies", "tabs", "http://*/*", "https://*/*", "activeTab",
@@ -13,7 +13,8 @@
 
   "icons": { "16": "images/cat.png", "48": "images/cat.png", "128": "images/cat.png" },
   "browser_action": {
-    "default_icon": "images/cat.png"
+    "default_icon": "images/cat.png",
+    "default_popup": "popup.htm"
   },
   "background": {
     "scripts": ["background.js"]
@@ -22,7 +23,7 @@
     "matches": ["<all_urls>"],
     "exclude_globs": ["*/manager.html"],
     "css": ["fix.css"],
-    "js": ["manager.js", "script.js", "jquery-3.2.1.js"]
+    "js": ["script.js", "jquery-3.2.1.js"]
   }]
 
 }

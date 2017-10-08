@@ -5,45 +5,49 @@
  value "popup.html".
  -->
 <html>
-  <head>
-    <title>Getting Started Extension's Popup</title>
-    <style type="text/css">
-      body {
-        margin: 10px;
-        white-space: nowrap;
-      }
 
-      h1 {
-        font-size: 15px;
-      }
+<head>
+  <style>
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
 
-      #container {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-      }
-    </style>
+    .portrait {
+      height: 80px;
+      width: 30px;
+    }
 
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-    -->
-    <script src="popup.js"></script>
-  </head>
+    .landscape {
+      height: 30px;
+      width: 80px;
+    }
 
-  <body>
-    <h1>Background Color Changer</h1>
-    <div id="container">
-      <span>Choose a color</span>
-      <select id="dropdown">
-        <option selected disabled hidden value=''></option>
-        <option value="white">White</option>
-        <option value="pink">Pink</option>
-        <option value="green">Green</option>
-        <option value="yellow">Yellow</option>
-      </select>
-    </div>
-  </body>
+    .square {
+      height: 75px;
+      width: 75px;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    td {
+      text-align: center;
+    }
+
+    table#catTable {
+      width:100%
+    }
+
+  </style>
+</head>
+
+<body>
+<h2>Cats Collected: </h2>
+<table id="catTable" style="width:100%">
+</table>
+</body>
+<script src="jquery-3.2.1.js"></script>
+<script src="manager.js"></script>
 </html>
