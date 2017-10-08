@@ -4,7 +4,7 @@
   "name" : "Cookie API Test Extension",
   "version" : "0.8",
   "description" : "Testing Cookie API",
-  "web_accessible_resources": ["images/*"],
+  "web_accessible_resources": ["images/*", "sounds/*"],
   "chrome_url_overrides": {
     "newtab": "manager.html"
   },
