@@ -12,39 +12,16 @@ var table = document.getElementById("catTable");
 
 
 function displayCatCollection() {
-    chrome.storage.sync.get('cats', function (profileObj) {
-        var profile = profileObj;
-        console.log(profile);
-        if (jQuery.isEmptyObject(profile)) {
-          return;
-        } else {
-          var catArray = profile['cats'];
-          for (var cat in catArray) {
-              var row = table.insertRow();
-              var cell1 = row.insertCell(0);
-              var cell2 = row.insertCell(1);
-              var cell3 = row.insertCell(2);
-
-              img.src = cat;
-              cell1.appendChild(img);
-              cell2.appendChild(chrome.storage.sync.get(cat, function (profileObj) {
-                return profileObj[cat];
-              }));
-              cell3.appendData("0");
-          }
-        }
-    });
-
-  /**
-  StorageArea.get(null, function(items) {
+  chrome.storage.sync.get("cats", function(items) {
     var cats_displayed = [];
     var div = document.createElement("DIV");
     div.id = "catCollection";
     var width = 0;
     var height = 0;
-
-    for (var item in items) {
-      var imgURL = item.value;
+    console.log(items["cats"]);
+    for (var i = 0; i < items["cats"].length; i++) {
+      var imgURL = items["cats"][i];
+      console.log(imgURL);
       if (cats_displayed.indexOf(imgURL) == -1) {
         var img = document.createElement("IMG");
         img.height = 100;
@@ -64,7 +41,6 @@ function displayCatCollection() {
     }
     document.body.appendChild(div);
   });
-   */
 }
 
 displayCatCollection();

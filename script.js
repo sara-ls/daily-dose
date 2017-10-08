@@ -56,14 +56,14 @@ function catClick() {
                     });
                 });
             } else {
-                var cats = profile['cats'];
-                cats.push(imgURL);
-                chrome.storage.sync.set({'cats': cats}, function () {
-                    console.log("added to storage");
-                });
-                chrome.storage.sync.set({imgURL: 1}, function () {
-                    console.log(imgURL + ":" + 1);
-                });
+              var cats = profile['cats'];
+              cats.push(imgURL);
+              chrome.storage.sync.set({'cats': cats}, function () {
+                  console.log("added to storage");
+              });
+              chrome.storage.sync.set({imgURL: 1}, function () {
+                  console.log(imgURL + ":" + 1);
+              });
             }
         }
     });
