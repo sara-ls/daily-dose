@@ -24,7 +24,7 @@ function displayCatCollection() {
       if (cats_displayed.indexOf(imgURL) == -1) {
         var img = document.createElement("IMG");
         img.src = imgURL;
-        while (img.height > 300) {
+        while (img.height > window.innerHeight / 3) {
           img.height = img.height / 2;
           img.width = img.width / 2;
         }
