@@ -17,24 +17,18 @@ function displayCatCollection() {
     div.id = "catCollection";
     var w = 0;
     var h = 100;
-    console.log(items["cats"]);
     for (var i = 0; i < items["cats"].length; i++) {
       var imgURL = items["cats"][i];
-      console.log(imgURL);
       if (cats_displayed.indexOf(imgURL) == -1) {
         var img = document.createElement("IMG");
         img.src = imgURL;
         var winHeight = window.innerHeight / 3;
-        while (img.height > winHeight) {
+        while (img.height != 0 && img.height > winHeight) {
           img.height = img.height / 2;
           img.width = img.width / 2;
         }
-        console.log(img.naturalHeight);
-        
-        console.log(img.bottom);
         img.bottom = Math.floor(Math.random() * screen.height - 250);;
         img.left = Math.floor(Math.random() * screen.width + 100);
-
         img.position = "relative";
         div.appendChild(img);
 
