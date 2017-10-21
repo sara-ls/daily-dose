@@ -22,8 +22,7 @@ poof.src = chrome.extension.getURL('sounds/poof.mp3');
 
 function catAppearance() {
   var chance = Math.random();
-  console.log(chance);
-  var catNum = selectRandom(1, 38);
+  var catNum = selectRandom(1, 36);
   if (chance < 0.11) {
 
       sound.play();

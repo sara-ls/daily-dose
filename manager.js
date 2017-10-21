@@ -21,7 +21,7 @@ function displayCatCollection() {
     for (var i = 0; i < items["cats"].length; i++) {
       var imgURL = items["cats"][i];
       console.log(imgURL);
-      if (cats_displayed.indexOf(imgURL) == -1) {
+      if (cats_displayed.indexOf(imgURL) === -1) {
         var img = document.createElement("IMG");
         img.src = imgURL;
         while (img.height > window.innerHeight / 3) {
