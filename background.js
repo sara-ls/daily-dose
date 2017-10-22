@@ -1,6 +1,3 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
 
 chrome.cookies.onChanged.addListener(function(info) {
   console.log("onChanged" + JSON.stringify(info));
@@ -13,7 +10,7 @@ function focusOrCreateTab(url) {
       var tabs = windows[i].tabs;
       for (var j in tabs) {
         var tab = tabs[j];
-        if (tab.url == url) {
+        if (tab.url === url) {
           existing_tab = tab;
           break;
         }

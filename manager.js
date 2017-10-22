@@ -1,6 +1,3 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
 var div = document.createElement("DIV");
 div.id = "catCollection";
 var width = 0;
@@ -19,7 +16,7 @@ function displayCatCollection() {
     var h = 100;
     for (var i = 0; i < items["cats"].length; i++) {
       var imgURL = items["cats"][i];
-      if (cats_displayed.indexOf(imgURL) == -1) {
+      if (cats_displayed.indexOf(imgURL) === -1) {
         var img = document.createElement("IMG");
         img.onload = 
         function(img) {
