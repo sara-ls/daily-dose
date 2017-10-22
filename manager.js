@@ -21,15 +21,24 @@ function displayCatCollection() {
       var imgURL = items["cats"][i];
       if (cats_displayed.indexOf(imgURL) == -1) {
         var img = document.createElement("IMG");
+        img.onload = 
+        function(img) {
+          return function(event) {
+            //console.log(event);
+            //console.log(img.height);
+              var winHeight = window.innerHeight / 3.5;
+              while (img.height > winHeight) {
+                console.log(img.height);
+
+                img.height = img.height / 2;
+                //img.width = img.width / 2;
+              }
+              img.bottom = Math.floor(Math.random() * screen.height - 250);;
+              img.left = Math.floor(Math.random() * screen.width + 100);
+              img.position = "relative";
+           };
+        } (img);
         img.src = imgURL;
-        var winHeight = window.innerHeight / 3;
-        while (img.height != 0 && img.height > winHeight) {
-          img.height = img.height / 2;
-          img.width = img.width / 2;
-        }
-        img.bottom = Math.floor(Math.random() * screen.height - 250);;
-        img.left = Math.floor(Math.random() * screen.width + 100);
-        img.position = "relative";
         div.appendChild(img);
 
 /*
