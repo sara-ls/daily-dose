@@ -1,3 +1,4 @@
+
 var div = document.createElement("DIV");
 div.id = "catCollection";
 var width = 0;
@@ -37,15 +38,6 @@ function displayCatCollection() {
         } (img);
         img.src = imgURL;
         div.appendChild(img);
-
-/*
-        if (w + 100 > window.innerWidth) {
-          w = 0;
-          h += 100;
-        } else {
-          w += 100;
-        }
-        */
       }
     }
     document.body.appendChild(div);
