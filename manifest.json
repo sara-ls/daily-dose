@@ -21,7 +21,6 @@
     "512": "icon/android-chrome-512x512.png"
   },
   "theme_color": "#ffffff",
-  "background_color": "#ffffff",
   "browser_action": {
     "default_icon": "icon/favicon-32x32.png",
     "default_popup": "popup.htm"

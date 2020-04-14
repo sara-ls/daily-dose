@@ -1,31 +1,39 @@
+/* Extensions are event based programs used to modify or enhance the Chrome 
+ * browsing experience. 
+ *
+ * Events are browser triggers, such as navigating to a new page, removing a 
+ * bookmark, or closing a tab. 
+ * 
+ * Extensions monitor these events in their background script, then react with 
+ * specified instructions.
+ */
 
-chrome.cookies.onChanged.addListener(function(info) {
-  console.log("onChanged" + JSON.stringify(info));
+chrome.cookies.onChanged.addListener(function (info) {
+  // console.log("onChanged" + JSON.stringify(info));
 });
 
 function focusOrCreateTab(url) {
-  chrome.windows.getAll({"populate":true}, function(windows) {
-    var existing_tab = null;
-    for (var i in windows) {
-      var tabs = windows[i].tabs;
-      for (var j in tabs) {
-        var tab = tabs[j];
+  chrome.windows.getAll({ populate: true }, function (windows) {
+    let existing_tab = null;
+    for (let i in windows) {
+      let tabs = windows[i].tabs;
+      for (let j in tabs) {
+        let tab = tabs[j];
         if (tab.url === url) {
           existing_tab = tab;
           break;
         }
       }
     }
+
     if (existing_tab) {
-      chrome.tabs.update(existing_tab.id, {"selected":true});
+      chrome.tabs.update(existing_tab.id, { selected: true });
     } else {
-      chrome.tabs.create({"url":url, "selected":true});
+      chrome.tabs.create({ url: url, selected: true });
     }
   });
 }
 
-
-chrome.browserAction.onClicked.addListener(function(tab) {
-  var manager_url = chrome.extension.getURL("manager.html");
-  focusOrCreateTab(manager_url);
+chrome.browserAction.onClicked.addListener(function () {
+  focusOrCreateTab(chrome.extension.getURL("manager.html"));
 });
