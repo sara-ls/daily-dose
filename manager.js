@@ -1,47 +1,38 @@
-
-var div = document.createElement("DIV");
-div.id = "catCollection";
-var width = 0;
-var height = 0;
-var img = document.createElement("IMG");
-img.maxHeight = 125;
-img.maxWidth = 125;
-var table = document.getElementById("catTable");
-
+// New Tab JS
 function displayCatCollection() {
-  chrome.storage.sync.get("cats", function(items) {
-    var cats_displayed = [];
-    var div = document.createElement("DIV");
-    div.id = "catCollection";
-    var w = 0;
-    var h = 100;
-    for (var i = 0; i < items["cats"].length; i++) {
-      var imgURL = items["cats"][i];
-      if (cats_displayed.indexOf(imgURL) === -1) {
-        var img = document.createElement("IMG");
-        img.onload = 
-        function(img) {
-          return function(event) {
-            //console.log(event);
-            //console.log(img.height);
-              var winHeight = window.innerHeight / 3.5;
+  chrome.storage.sync.get("cats", (items) => {
+    let cats_displayed = [];
+    let div = document.createElement("DIV");
+    div.id = "gifCollection";
+    let img = document.createElement("IMG");
+    img.maxHeight = 125;
+    img.maxWidth = 125;
+    img.setAttribute("alt", "cat-gif");
+    if (items["cats"]) {
+      for (let i = 0; i < items["cats"].length; i++) {
+        let imgURL = items["cats"][i];
+        if (cats_displayed.indexOf(imgURL) === -1) {
+          let img = document.createElement("IMG");
+          img.onload = (function (img) {
+            return function (event) {
+              let winHeight = window.innerHeight / 3.5;
               while (img.height > winHeight) {
-                console.log(img.height);
-
                 img.height = img.height / 2;
-                //img.width = img.width / 2;
               }
-              img.bottom = Math.floor(Math.random() * screen.height - 250);;
+              img.bottom = Math.floor(Math.random() * screen.height - 250);
               img.left = Math.floor(Math.random() * screen.width + 100);
               img.position = "relative";
-           };
-        } (img);
-        img.src = imgURL;
-        div.appendChild(img);
+            };
+          })(img);
+          img.src = imgURL;
+          div.appendChild(img);
+        }
       }
+      document.body.appendChild(div);
     }
-    document.body.appendChild(div);
   });
 }
 
-displayCatCollection();
+document.addEventListener("DOMContentLoaded", () => {
+  displayCatCollection();
+});

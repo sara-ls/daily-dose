@@ -1,4 +1,16 @@
-# neko-catsume
+# Chrome Extension
+
+## Credits
+
+- Images
+  - Unsplash
+- [James Nghiem](https://github.com/jamesnghiem)
+- [Evan Chang]()
+- Inspiration
+  - [Tabby Katz](https://github.com/jamesnghiem/tabby-katz)
+  - [Momentum]()
+  
+<!-- 
 Download here: https://chrome.google.com/webstore/detail/tabby-katz/amppfkkikonidaaeligbokapmjhapgeo?hl=en
 <p align="center">
   <img src="https://i.imgur.com/TTK2Cnb.jpg">
@@ -18,4 +30,4 @@ Along with that, clicking Tabby Katz icon on the top right of Chrome allows you 
 </p>
 
 This project was made for CalHacks4.0 with Evan Chang and Jason Yeung.
-
+ -->

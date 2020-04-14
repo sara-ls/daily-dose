@@ -4,7 +4,7 @@
  "browser_action" field in manifest.json contains the "default_popup" key with
  value "popup.html".
  -->
-<html>
+<html lang="en">
 
 <head>
   <style>
@@ -28,26 +28,43 @@
       width: 75px;
     }
 
-    table, th, td {
-      border: 1px solid black;
+    table {
+      box-sizing: border-box;
+      border-spacing: 0;
     }
+
+    table,
+    td {
+      border: 1px solid black;
+      margin: 0;
+    }
+
+    tr:first-child td {
+      padding: 5px;
+    }
+
 
     td {
       text-align: center;
     }
 
     table#catTable {
-      width:100%
+      width: 100%
     }
-
   </style>
 </head>
 
 <body>
-<h2>Cats Collected: </h2>
-<table id="catTable" style="width:100%">
-</table>
+  <h2>Collected</h2>
+  <table id="catTable" style="width:100%">
+    <tr>
+      <th>Cat</th>
+      <th>Seen</th>
+      <th>Love</th>
+    </tr>
+  </table>
 </body>
-<script src="jquery-3.2.1.js"></script>
+<script src="jquery-3.4.1.min.js"></script>
 <script src="popup2.js"></script>
+
 </html>
