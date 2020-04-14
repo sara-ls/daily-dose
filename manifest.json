@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Tabby Katz",
+  "name": "New Tab GIF Collection",
   "version": "1.2.0",
   "description": "Chrome Extension - gif Collection",
   "web_accessible_resources": ["images/*", "sounds/*"],
@@ -15,14 +15,15 @@
     "activeTab",
     "storage"
   ],
-
+  "short_name": "Collect",
   "icons": {
-    "16": "images/cat.png",
-    "48": "images/cat.png",
-    "128": "images/cat.png"
+    "192": "icon/android-chrome-192x192.png",
+    "512": "icon/android-chrome-512x512.png"
   },
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "browser_action": {
-    "default_icon": "images/cat.png",
+    "default_icon": "icon/favicon-32x32.png",
     "default_popup": "popup.htm"
   },
   "background": {
