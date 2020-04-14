@@ -1,16 +1,26 @@
 {
   "manifest_version": 2,
-  "name" : "Tabby Katz",
-  "version" : "1.2.0",
-  "description" : "Chrome Extension - gif Collection",
+  "name": "Tabby Katz",
+  "version": "1.2.0",
+  "description": "Chrome Extension - gif Collection",
   "web_accessible_resources": ["images/*", "sounds/*"],
   "chrome_url_overrides": {
     "newtab": "manager.html"
   },
-  "permissions": [ "cookies", "tabs", "http://*/*", "https://*/*", "activeTab",
-  "storage"],
+  "permissions": [
+    "cookies",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "activeTab",
+    "storage"
+  ],
 
-  "icons": { "16": "images/cat.png", "48": "images/cat.png", "128": "images/cat.png" },
+  "icons": {
+    "16": "images/cat.png",
+    "48": "images/cat.png",
+    "128": "images/cat.png"
+  },
   "browser_action": {
     "default_icon": "images/cat.png",
     "default_popup": "popup.htm"
@@ -18,11 +28,12 @@
   "background": {
     "scripts": ["background.js", "manager.js"]
   },
-  "content_scripts": [ {
-    "matches": ["<all_urls>"],
-    "exclude_globs": ["*/manager.html"],
-    "css": ["fix.css"],
-    "js": ["script.js", "jquery-3.4.1.min.js"]
-  }]
-
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "exclude_globs": ["*/manager.html"],
+      "css": ["fix.css"],
+      "js": ["script.js", "jquery-3.4.1.min.js"]
+    }
+  ]
 }

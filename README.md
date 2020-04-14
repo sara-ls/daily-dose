@@ -1,14 +1,22 @@
 # Chrome Extension
 
+## Permissions
+
+* Replace the page you see when opening a new tab
+* Read your browsing history
+
 ## Credits
 
-- Images
-  - Unsplash
-- [James Nghiem](https://github.com/jamesnghiem)
-- [Evan Chang]()
-- Inspiration
-  - [Tabby Katz](https://github.com/jamesnghiem/tabby-katz)
-  - [Momentum]()
+* V1 Contributors
+  * [James Nghiem](https://github.com/jamesnghiem)
+  * [Evan Chang](https://github.com/pkmnfreak)
+  * [Jason Yeung](https://github.com/JasonJYeung)
+* Images
+  * Unsplash
+  * Giphy
+* Inspiration
+  * [Tabby Katz](https://github.com/jamesnghiem/tabby-katz)
+  * [Momentum](https://momentumdash.com/)
   
 <!-- 
 Download here: https://chrome.google.com/webstore/detail/tabby-katz/amppfkkikonidaaeligbokapmjhapgeo?hl=en
