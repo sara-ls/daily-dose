@@ -7,8 +7,12 @@
     position: fixed;
     top: var(--top-placement);
     left: var(--left-placement);
-    max-width: 125px;
-    max-height:125px;
-    width = auto;
-    height = auto;
+    max-width: 100px;
+    max-height:100px;
+    width: auto;
+    height: auto;
+}
+
+#cat img:hover {
+  cursor: pointer;
 }

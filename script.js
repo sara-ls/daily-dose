@@ -57,7 +57,6 @@ function catClick() {
       });
     } else {
       // Seen multiple cats, add more cats
-
       if (jQuery.inArray(imgURL, profile["cats"], 0) > -1) {
         chrome.storage.sync.get(imgURL, function (timesSeen) {
           var key = imgURL;
@@ -71,7 +70,7 @@ function catClick() {
         var cats = profile["cats"];
         cats.push(imgURL);
         chrome.storage.sync.set({ cats: cats }, function () {
-          console.log("added to storage");
+          console.log("added cat to storage");
         });
         var key = imgURL;
         var file = {};
