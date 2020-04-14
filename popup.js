@@ -24,10 +24,8 @@ function addRow(count, currentCat, seen) {
   row = table.insertRow(count);
   cell1 = row.insertCell(0);
   cell2 = row.insertCell(1);
-  cell3 = row.insertCell(2);
   cell1.appendChild(img);
-  cell2.innerHTML = seen.toString();
-  cell3.appendChild(heart);
+  cell2.appendChild(heart);
 }
 
 function addRowForCat(count, currentCat) {

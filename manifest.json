@@ -25,7 +25,7 @@
     "default_popup": "popup.htm"
   },
   "background": {
-    "scripts": ["background.js", "manager.js"],
+    "scripts": ["background.js", "manager.js"], 
     "persistent": false
   },
   "options_page": "options.html",
