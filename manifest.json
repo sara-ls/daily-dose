@@ -20,13 +20,13 @@
     "192": "icon/android-chrome-192x192.png",
     "512": "icon/android-chrome-512x512.png"
   },
-  "theme_color": "#ffffff",
   "browser_action": {
     "default_icon": "icon/favicon-32x32.png",
     "default_popup": "popup.htm"
   },
   "background": {
-    "scripts": ["background.js", "manager.js"]
+    "scripts": ["background.js", "manager.js"],
+    "persistent": false
   },
   "content_scripts": [
     {

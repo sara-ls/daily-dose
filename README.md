@@ -2,6 +2,7 @@
 
 ## Permissions
 
+* Chrome's Storage API
 * Replace the page you see when opening a new tab
 * Read your browsing history
 
