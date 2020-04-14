@@ -38,8 +38,8 @@ function selectRandom(min, max) {
 
 function catClick() {
   sound.play();
-  img.src = chrome.extension.getURL("images/smoke.gif");
-  window.setTimeout(clearImage, 900);
+  img.src = chrome.extension.getURL("images/clicked.gif");
+  window.setTimeout(clearImage, 700);
   // check if any cats are found, should only be done for first cat
   chrome.storage.sync.get("cats", function (profileObj) {
     var profile = profileObj;
