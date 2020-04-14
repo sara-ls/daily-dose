@@ -1,30 +1,28 @@
-var rand = Math.floor(Math.random() * screen.height);
-var rand2 = Math.floor(Math.random() * screen.width);
+var yPosition = Math.floor(Math.random() * screen.height);
+var xPosition = Math.floor(Math.random() * screen.width);
 
-if (rand > 200) {
-  rand = rand - 200;
+if (yPosition > 200) {
+  yPosition = yPosition - 200;
 }
 
-if (rand2 > 200) {
-  rand2 = rand2 - 200;
+if (xPosition > 200) {
+  xPosition = xPosition - 200;
 }
 
 var img = document.createElement("IMG");
-var div = document.createElement("DIV");
+
 var imgURL;
-const sound = new Audio();
-sound.src = chrome.extension.getURL("sounds/meow.mp3");
-sound.volume = 0.1;
 
 function catAppearance() {
   var chance = Math.random();
   var catNum = selectRandom(1, 35);
   if (chance < 0.5) {
+    var div = document.createElement("DIV");
     div.id = "cat";
     imgURL = chrome.extension.getURL("images/cat" + catNum + ".gif");
     img.src = imgURL;
-    div.style.setProperty("--top-placement", rand + "px", "important");
-    div.style.setProperty("--left-placement", rand2 + "px", "important");
+    div.style.setProperty("--top-placement", yPosition + "px", "important");
+    div.style.setProperty("--left-placement", xPosition + "px", "important");
     div.appendChild(img);
     document.body.appendChild(div);
     div.addEventListener("click", catClick);
@@ -37,13 +35,19 @@ function selectRandom(min, max) {
 }
 
 function catClick() {
+  const sound = new Audio();
+  sound.src = chrome.extension.getURL("sounds/meow.mp3");
+  sound.volume = 0.1;
   sound.play();
   img.src = chrome.extension.getURL("images/clicked.gif");
-  window.setTimeout(clearImage, 700);
-  // check if any cats are found, should only be done for first cat
+  window.setTimeout(function clearImage() {
+    img.removeAttribute("src");
+  }, 700);
+
   chrome.storage.sync.get("cats", function (profileObj) {
     var profile = profileObj;
     console.log("profile " + profile);
+    // Check if any cats are found, only be done for first cat
     if (Object.keys(profile).length === 0) {
       // Add string of imgURL
       chrome.storage.sync.set({ cats: [imgURL] }, function () {
@@ -56,7 +60,7 @@ function catClick() {
         console.log(imgURL + ":" + 1);
       });
     } else {
-      // Seen multiple cats, add more cats
+      // Seen multiple cats --> add more cats
       if (jQuery.inArray(imgURL, profile["cats"], 0) > -1) {
         chrome.storage.sync.get(imgURL, function (timesSeen) {
           var key = imgURL;
@@ -81,10 +85,6 @@ function catClick() {
       }
     }
   });
-}
-
-function clearImage() {
-  img.removeAttribute("src");
 }
 
 catAppearance();
