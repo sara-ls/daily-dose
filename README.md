@@ -1,6 +1,7 @@
+
 # Daily Dose Chrome Extension
 
-***Get your daily dose of motivation with this chrome extension***
+![](icon/favicon-16x16.png) ***Get your daily dose of motivation with this chrome extension***
 
 ## Description
 
