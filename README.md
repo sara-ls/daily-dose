@@ -6,9 +6,11 @@
 
 Sometimes you need a little dose of positivity or motivation throughout your day. This chrome extension will randomly show you cute/motivational gifs while your using Chrome to help brighten your day and improve your productivity!
 
-Download Daily Dose at: []()
+<!-- Download Daily Dose at: []() -->
 
 ## Features
+
+![](https://media.giphy.com/media/d8dBt5XxIlnStGS9BJ/giphy.gif)
 
 * Motivational stickers appear in your browser's active tab throughout you're day without interfering with the rest of the site
 
@@ -17,7 +19,6 @@ Download Daily Dose at: []()
 * Custom new tab page where you can view the stickers you've collected
 
 * Chrome extension popup with a heart image to show how many times you've clicked on that sticker
-
 
 ## Permissions
 
