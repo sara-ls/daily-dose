@@ -27,7 +27,7 @@ Download Daily Dose at: []()
 
 ## Future Work
 
-* Options page 
+* Options page
   * Turn on/off for specifc website
   * Change new tab background
   * Change click sound

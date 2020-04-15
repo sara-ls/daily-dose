@@ -1,19 +1,19 @@
 let yPosition = Math.floor(Math.random() * screen.height);
 let xPosition = Math.floor(Math.random() * screen.width);
 
-if (yPosition > 200) {
-  yPosition = yPosition - 200;
+if (yPosition > 300) {
+  yPosition = yPosition - 300;
 }
 
-if (xPosition > 200) {
-  xPosition = xPosition - 200;
+if (xPosition > 300) {
+  xPosition = xPosition - 300;
 }
 
 let img = document.createElement("IMG");
 
 var imgURL;
 
-function catAppearance() {
+function stickerAppearance() {
   const numCollectableGifs = 6;
   // Frequency of gif showing up
   let chance = Math.random();
@@ -28,7 +28,7 @@ function catAppearance() {
     div.style.setProperty("--left-placement", xPosition + "px", "important");
     div.appendChild(img);
     document.body.appendChild(div);
-    div.addEventListener("click", catClick);
+    div.addEventListener("click", stickerClick);
   }
 }
 
@@ -37,7 +37,7 @@ function selectRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function catClick() {
+function stickerClick() {
   const sound = new Audio();
   sound.src = chrome.extension.getURL("sounds/meow.mp3");
   sound.volume = 0.1;
@@ -47,13 +47,13 @@ function catClick() {
     img.removeAttribute("src");
   }, 700);
 
-  chrome.storage.sync.get("cats", function (profileObj) {
+  chrome.storage.sync.get("stickers", function (profileObj) {
     var profile = profileObj;
     console.log("profile " + profile);
-    // Check if any cats are found, only be done for first cat
+    // Check if any stickers have been saved
     if (Object.keys(profile).length === 0) {
       // Add string of imgURL
-      chrome.storage.sync.set({ cats: [imgURL] }, function () {
+      chrome.storage.sync.set({ stickers: [imgURL] }, function () {
         console.log("added to storage");
       });
       var key = imgURL;
@@ -63,8 +63,8 @@ function catClick() {
         console.log(imgURL + ":" + 1);
       });
     } else {
-      // Seen multiple cats --> add more cats
-      if (jQuery.inArray(imgURL, profile["cats"], 0) > -1) {
+      // Seen multiple stickers --> add new sticker
+      if (jQuery.inArray(imgURL, profile["stickers"], 0) > -1) {
         chrome.storage.sync.get(imgURL, function (timesSeen) {
           var key = imgURL;
           var file = {};
@@ -74,9 +74,9 @@ function catClick() {
           });
         });
       } else {
-        var cats = profile["cats"];
-        cats.push(imgURL);
-        chrome.storage.sync.set({ cats: cats }, function () {
+        var stickers = profile["stickers"];
+        stickers.push(imgURL);
+        chrome.storage.sync.set({ stickers: stickers }, function () {
           console.log("added cat to storage");
         });
         var key = imgURL;
@@ -90,4 +90,4 @@ function catClick() {
   });
 }
 
-catAppearance();
+stickerAppearance();

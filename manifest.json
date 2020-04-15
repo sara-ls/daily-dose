@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "New Tab GIF Collection",
+  "name": "Daily Dose",
   "version": "1.2.0",
-  "description": "Chrome Extension - gif Collection",
+  "description": "Collect Motivational GIFs",
   "web_accessible_resources": ["images/*", "sounds/*"],
   "chrome_url_overrides": {
     "newtab": "manager.html"
@@ -15,7 +15,7 @@
     "activeTab",
     "storage"
   ],
-  "short_name": "GIF Collect",
+  "short_name": "Daily Dose",
   "icons": {
     "192": "icon/android-chrome-192x192.png",
     "512": "icon/android-chrome-512x512.png"

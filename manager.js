@@ -1,6 +1,6 @@
 // New Tab JS
 function displayCatCollection() {
-  chrome.storage.sync.get("cats", (items) => {
+  chrome.storage.sync.get("stickers", (items) => {
     let cats_displayed = [];
     let div = document.createElement("DIV");
     div.id = "gifCollection";
@@ -8,9 +8,9 @@ function displayCatCollection() {
     img.maxHeight = 125;
     img.maxWidth = 125;
     img.setAttribute("alt", "cat-gif");
-    if (items["cats"]) {
-      for (let i = 0; i < items["cats"].length; i++) {
-        let imgURL = items["cats"][i];
+    if (items["stickers"]) {
+      for (let i = 0; i < items["stickers"].length; i++) {
+        let imgURL = items["stickers"][i];
         if (cats_displayed.indexOf(imgURL) === -1) {
           let img = document.createElement("IMG");
           img.onload = (function (img) {
