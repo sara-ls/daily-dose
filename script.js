@@ -1,5 +1,5 @@
-var yPosition = Math.floor(Math.random() * screen.height);
-var xPosition = Math.floor(Math.random() * screen.width);
+let yPosition = Math.floor(Math.random() * screen.height);
+let xPosition = Math.floor(Math.random() * screen.width);
 
 if (yPosition > 200) {
   yPosition = yPosition - 200;
@@ -9,17 +9,20 @@ if (xPosition > 200) {
   xPosition = xPosition - 200;
 }
 
-var img = document.createElement("IMG");
+let img = document.createElement("IMG");
 
 var imgURL;
 
 function catAppearance() {
-  var chance = Math.random();
-  var catNum = selectRandom(1, 35);
+  const numCollectableGifs = 6;
+  // Frequency of gif showing up
+  let chance = Math.random();
+  // Pick random collectable gif id
+  let gifId = selectRandom(1, numCollectableGifs);
   if (chance < 0.5) {
-    var div = document.createElement("DIV");
+    let div = document.createElement("DIV");
     div.id = "cat";
-    imgURL = chrome.extension.getURL("images/cat" + catNum + ".gif");
+    imgURL = chrome.extension.getURL("images/collect" + gifId + ".gif");
     img.src = imgURL;
     div.style.setProperty("--top-placement", yPosition + "px", "important");
     div.style.setProperty("--left-placement", xPosition + "px", "important");

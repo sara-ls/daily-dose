@@ -15,7 +15,7 @@
     "activeTab",
     "storage"
   ],
-  "short_name": "Collect",
+  "short_name": "GIF Collect",
   "icons": {
     "192": "icon/android-chrome-192x192.png",
     "512": "icon/android-chrome-512x512.png"
@@ -25,7 +25,7 @@
     "default_popup": "popup.htm"
   },
   "background": {
-    "scripts": ["background.js", "manager.js"], 
+    "scripts": ["background.js", "manager.js"],
     "persistent": false
   },
   "options_page": "options.html",
