@@ -22,9 +22,16 @@ Sometimes you need a little dose of positivity or motivation throughout your day
 
 ## Permissions
 
-* Chrome's Storage API
 * Replace the page you see when opening a new tab
 * Read your browsing history
+
+## Technologies
+
+- Chrome's Storage API
+- JavaScript
+- jQuery
+- HTML
+- CSS
 
 ## Future Work
 
