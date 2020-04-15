@@ -23,9 +23,9 @@ function focusOrCreateTab(url) {
     }
 
     if (existing_tab) {
-      chrome.tabs.update(existing_tab.id, { selected: true });
+      chrome.tabs.update(existing_tab.id, { active: true });
     } else {
-      chrome.tabs.create({ url: url, selected: true });
+      chrome.tabs.create({ url: url, active: true });
     }
   });
 }
