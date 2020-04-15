@@ -8,10 +8,6 @@
  * specified instructions.
  */
 
-chrome.cookies.onChanged.addListener(function (info) {
-  // console.log("onChanged" + JSON.stringify(info));
-});
-
 function focusOrCreateTab(url) {
   chrome.windows.getAll({ populate: true }, function (windows) {
     let existing_tab = null;
