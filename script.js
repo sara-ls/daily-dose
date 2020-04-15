@@ -14,7 +14,7 @@ let img = document.createElement("IMG");
 var imgURL;
 
 function stickerAppearance() {
-  const numCollectableGifs = 6;
+  const numCollectableGifs = 8;
   // Frequency of gif showing up
   let chance = Math.random();
   // Pick random collectable gif id

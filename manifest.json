@@ -8,7 +8,7 @@
     "newtab": "manager.html"
   },
   "permissions": [
-    "tabs",
+    "tabs", 
     "http://*/*",
     "https://*/*",
     "activeTab",
