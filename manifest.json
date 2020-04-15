@@ -7,7 +7,13 @@
   "chrome_url_overrides": {
     "newtab": "manager.html"
   },
-  "permissions": ["tabs", "http://*/*", "https://*/*", "activeTab", "storage"],
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "activeTab",
+    "storage"
+  ],
   "short_name": "Daily Dose",
   "icons": {
     "192": "icon/android-chrome-192x192.png",
@@ -24,7 +30,7 @@
   "options_page": "options.html",
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
+      "matches": ["<all_urls>"],
       "exclude_globs": ["*/manager.html"],
       "css": ["fix.css"],
       "js": ["script.js", "jquery-3.4.1.min.js"]
