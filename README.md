@@ -18,7 +18,7 @@ Sometimes you need a little dose of positivity or motivation throughout your day
 
 * Custom new tab page where you can view the stickers you've collected
 
-![](images/new_tab_screennew_tb_shot.png)
+![](images/new_tab_screennew_tab_shot.png)
 
 * Chrome extension popup with a heart image to show how many times you've clicked on that sticker
 
