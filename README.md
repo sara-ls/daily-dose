@@ -10,15 +10,20 @@ Sometimes you need a little dose of positivity or motivation throughout your day
 
 ## Features
 
-![](https://media.giphy.com/media/j65HZTYkRKCGll7W2h/giphy.gif)
 
 * Motivational stickers appear in your browser's active tab throughout you're day without interfering with the rest of the site
+
+![](https://media.giphy.com/media/j65HZTYkRKCGll7W2h/giphy.gif)
 
 * Clicking a sticker --> plays a sound and add sticker to your collection
 
 * Custom new tab page where you can view the stickers you've collected
 
+![](images/new_tab_screenshot.png)
+
 * Chrome extension popup with a heart image to show how many times you've clicked on that sticker
+
+![](images/popup_screenshot.png)
 
 ## Permissions
 
