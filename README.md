@@ -10,7 +10,6 @@ Sometimes you need a little dose of positivity or motivation throughout your day
 
 ## Features
 
-
 * Motivational stickers appear in your browser's active tab throughout you're day without interfering with the rest of the site
 
 ![](https://media.giphy.com/media/j65HZTYkRKCGll7W2h/giphy.gif)
@@ -19,7 +18,7 @@ Sometimes you need a little dose of positivity or motivation throughout your day
 
 * Custom new tab page where you can view the stickers you've collected
 
-![](images/new_tab_screenshot.png)
+![](images/new_tab_screennew_tb_shot.png)
 
 * Chrome extension popup with a heart image to show how many times you've clicked on that sticker
 
@@ -32,11 +31,11 @@ Sometimes you need a little dose of positivity or motivation throughout your day
 
 ## Technologies
 
-- Chrome's Storage API
-- JavaScript
-- jQuery
-- HTML
-- CSS
+* Chrome's Storage API
+* JavaScript
+* jQuery
+* HTML
+* CSS
 
 ## Future Work
 
