@@ -10,7 +10,7 @@ Sometimes you need a little dose of positivity or motivation throughout your day
 
 ## Features
 
-![](https://media.giphy.com/media/d8dBt5XxIlnStGS9BJ/giphy.gif)
+![](https://media.giphy.com/media/j65HZTYkRKCGll7W2h/giphy.gif)
 
 * Motivational stickers appear in your browser's active tab throughout you're day without interfering with the rest of the site
 
