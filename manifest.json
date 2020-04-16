@@ -8,7 +8,6 @@
     "newtab": "manager.html"
   },
   "permissions": [
-    "tabs", 
     "http://*/*",
     "https://*/*",
     "activeTab",
@@ -24,8 +23,7 @@
     "default_popup": "popup.htm"
   },
   "background": {
-    "scripts": ["background.js", "manager.js"],
-    "persistent": false
+    "scripts": ["background.js", "manager.js"]
   },
   "options_page": "options.html",
   "content_scripts": [
@@ -33,7 +31,7 @@
       "matches": ["<all_urls>"],
       "exclude_globs": ["*/manager.html"],
       "css": ["fix.css"],
-      "js": ["script.js", "jquery-3.4.1.min.js"]
+      "js": [ "jquery-3.4.1.min.js", "script.js"]
     }
   ]
 }

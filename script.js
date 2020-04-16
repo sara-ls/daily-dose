@@ -42,6 +42,7 @@ function stickerClick() {
   sound.src = chrome.extension.getURL("sounds/meow.mp3");
   sound.volume = 0.1;
   sound.play();
+
   img.src = chrome.extension.getURL("images/clicked.gif");
   window.setTimeout(function clearImage() {
     img.removeAttribute("src");
@@ -54,13 +55,13 @@ function stickerClick() {
     if (Object.keys(profile).length === 0) {
       // Add string of imgURL
       chrome.storage.sync.set({ stickers: [imgURL] }, function () {
-        console.log("added to storage");
+        // console.log("added to storage");
       });
       var key = imgURL;
       var file = {};
       file[key] = 1;
       chrome.storage.sync.set(file, function () {
-        console.log(imgURL + ":" + 1);
+        // console.log(imgURL + ":" + 1);
       });
     } else {
       // Seen multiple stickers --> add new sticker
@@ -70,20 +71,20 @@ function stickerClick() {
           var file = {};
           file[key] = timesSeen[imgURL] + 1;
           chrome.storage.sync.set(file, function () {
-            console.log(file);
+            // console.log(file);
           });
         });
       } else {
         var stickers = profile["stickers"];
         stickers.push(imgURL);
-        chrome.storage.sync.set({ stickers: stickers }, function () {
-          console.log("added cat to storage");
+        chrome.storage.sync.set({ stickers: stickers }, () => {
+          // console.log("added sticker to storage");
         });
         var key = imgURL;
         var file = {};
         file[key] = 1;
         chrome.storage.sync.set(file, function () {
-          console.log(file);
+          // console.log(file);
         });
       }
     }

@@ -30,6 +30,7 @@ function focusOrCreateTab(url) {
   });
 }
 
+// 
 chrome.browserAction.onClicked.addListener(function () {
   focusOrCreateTab(chrome.extension.getURL("manager.html"));
 });
