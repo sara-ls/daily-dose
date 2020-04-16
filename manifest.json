@@ -5,7 +5,7 @@
   "description": "Collect Motivational GIFs",
   "web_accessible_resources": ["images/*", "sounds/*"],
   "chrome_url_overrides": {
-    "newtab": "manager.html"
+    "newtab": "new_tab.html"
   },
   "permissions": [
     "http://*/*",
@@ -29,7 +29,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "exclude_globs": ["*/manager.html"],
+      "exclude_globs": ["*/new_tab.html"],
       "css": ["fix.css"],
       "js": [ "jquery-3.4.1.min.js", "script.js"]
     }

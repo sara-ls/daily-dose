@@ -32,5 +32,5 @@ function focusOrCreateTab(url) {
 
 // 
 chrome.browserAction.onClicked.addListener(function () {
-  focusOrCreateTab(chrome.extension.getURL("manager.html"));
+  focusOrCreateTab(chrome.extension.getURL("new_tab.html"));
 });
