@@ -3,6 +3,8 @@
 
 ![](icon/favicon-16x16.png) ***Get your daily dose of motivation with this chrome extension***
 
+Add to Chrome: [Chrome Web Store - Daily Dose](https://chrome.google.com/webstore/detail/daily-dose/fbkhoaljbboohomeifchfbepflpckpmj)
+
 ## Description
 
 Sometimes you need a little dose of positivity or motivation throughout your day. This chrome extension will randomly show you cute/motivational gifs while your using Chrome to help brighten your day and improve your productivity!
