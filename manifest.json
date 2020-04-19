@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Daily Dose",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Collect Motivational GIFs",
   "web_accessible_resources": ["images/*", "sounds/*"],
   "chrome_url_overrides": {
