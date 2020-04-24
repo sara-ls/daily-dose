@@ -1,5 +1,4 @@
 // JS for Extension popup
-
 var table = document.getElementById("stickerTable");
 var url;
 var row, cell1, cell2, cell3;
@@ -19,7 +18,7 @@ function addRow(count, currentSticker, seen) {
   img.height = 25;
   img.width = 25;
   img.src = currentSticker;
-  console.log(count);
+  // console.log(count);
   row = table.insertRow(count);
   cell1 = row.insertCell(0);
   cell2 = row.insertCell(1);
@@ -28,15 +27,14 @@ function addRow(count, currentSticker, seen) {
 }
 
 function addRowForSticker(count, currentSticker) {
-  chrome.storage.sync.get(currentSticker, function (timesSeen) {
+  chrome.storage.sync.get(currentSticker, timesSeen => {
     addRow(count, currentSticker, timesSeen[currentSticker]);
   });
 }
 
-function displayCatCollection() {
-  chrome.storage.sync.get("stickers", function (profileObj) {
-    var profile = profileObj;
-    console.log(profile);
+function displayStickerCollection() {
+  chrome.storage.sync.get("stickers", profile => {
+    // console.log(profile);
     if (jQuery.isEmptyObject(profile)) {
       return;
     } else {
@@ -52,4 +50,4 @@ function displayCatCollection() {
   });
 }
 
-displayCatCollection();
+displayStickerCollection();

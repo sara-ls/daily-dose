@@ -8,7 +8,6 @@
     "newtab": "new_tab.html"
   },
   "permissions": [
-    "http://*/*",
     "https://*/*",
     "activeTab",
     "storage"

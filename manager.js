@@ -1,5 +1,5 @@
 // New Tab JS
-function displayCatCollection() {
+function displayStickerCollection() {
   chrome.storage.sync.get("stickers", (items) => {
     let cats_displayed = [];
     let div = document.createElement("DIV");
@@ -34,5 +34,5 @@ function displayCatCollection() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  displayCatCollection();
+  displayStickerCollection();
 });
